@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101216"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Coin Scout">
-<title>Coin Scout · Paper Research</title>
+<title>Coin Scout V2 · FOMO Research</title>
 <style>
 :root{color-scheme:dark;--bg:#0c1015;--panel:#171c25;--edge:#2b3441;--ink:#ecf2fa;--muted:#9aabba;--mint:#a0f5c5;--yellow:#ffd792;--red:#ffa7a7}
 *{box-sizing:border-box}body{background:var(--bg);margin:0;color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}main{max-width:740px;margin:auto;padding:24px 16px 96px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:var(--mint);font-size:11px;font-weight:750}h1{font-size:32px;letter-spacing:-.045em;line-height:1.15;margin:7px 0 6px}h2{font-size:17px;margin:0 0 14px}.subtitle{color:var(--muted);max-width:510px;line-height:1.5;margin:8px 0 22px}.chip{border:1px solid #42614f;background:#1a3329;color:var(--mint);border-radius:50px;font-size:11px;padding:5px 10px;font-weight:650}.panel,.coin{background:var(--panel);border:1px solid var(--edge);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 9px 40px #00000019}label{display:block;font-weight:650;margin-bottom:7px;font-size:12px;color:#c1cbd5}.cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}select,input{width:100%;border-radius:11px;border:1px solid #414c5b;background:#10151d;color:var(--ink);font:inherit;padding:12px;min-height:45px}select:focus,input:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--mint);outline-offset:2px}.btn{background:var(--mint);color:#10251a;border:0;border-radius:12px;padding:13px 15px;font-weight:800;font-size:15px;cursor:pointer}.btn:disabled{opacity:.5;cursor:wait}.ghost{color:var(--ink);background:#24303d;border:1px solid #465465;border-radius:10px;padding:10px 12px;cursor:pointer;font-size:13px;font-weight:650}.actions{display:flex;align-items:center;gap:8px;margin-top:14px}.actions>.btn{flex:1}.small{font-size:12px;color:var(--muted);margin:8px 0 0}.bar{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin:24px 0 12px}.bar h2{margin:0}.count{font-size:12px;color:var(--muted)}.headline{display:flex;align-items:start;gap:9px}.symbol{font-size:19px;font-weight:800;letter-spacing:-.02em;overflow-wrap:anywhere}.name{color:var(--muted);font-size:12px;overflow-wrap:anywhere}.pair{margin-left:auto;color:#c7b7ff;background:#2c2440;padding:4px 8px;border-radius:8px;font-size:11px;white-space:nowrap}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.metric .key{font-size:11px;color:var(--muted)}.metric .val{font-size:14px;font-weight:750;margin-top:2px;overflow-wrap:anywhere}.up{color:var(--mint)}.down{color:var(--red)}.warn{color:var(--yellow)}.coinfooter{display:flex;gap:8px;align-items:center}.coinfooter a{display:inline-flex;align-items:center;justify-content:center;background:#263442;color:var(--ink);text-decoration:none;border-radius:10px;padding:11px 12px;font-size:12px;font-weight:700;flex:1}.coinfooter button{flex:1}.hint{font-size:12px;color:var(--muted);margin:0 0 13px}.notice{padding:12px;border:1px solid #4e4a37;border-radius:12px;background:#282519;color:#f7e0ac;font-size:12px;margin-top:12px}.muted{color:var(--muted)}#status{font-size:13px;color:var(--muted);min-height:20px;margin-top:10px}.tabs{display:flex;gap:8px;margin:12px 0}.tab{flex:1;padding:10px;background:#242d38;color:var(--ink);border:1px solid var(--edge);border-radius:12px;font-weight:700}.tab.active{background:#314d3c;color:var(--mint);border-color:#567a61}.empty{padding:35px 24px;border:1px dashed var(--edge);text-align:center;border-radius:14px;color:var(--muted);font-size:14px}footer{color:var(--muted);font-size:11px;line-height:1.6;margin-top:20px}.mode{display:flex;gap:8px;align-items:center}.mode input{width:auto;min-height:auto}.mode label{margin:0;font-size:13px;font-weight:500}.warning{color:var(--yellow);font-weight:600}
@@ -12,8 +12,8 @@
 </head>
 <body><main>
 <div class="top"><div class="eyebrow">Your iPhone research tool</div><div class="chip">No real trades</div></div>
-<h1>Coin Scout <span style="color:var(--mint)">↗</span></h1>
-<p class="subtitle">Browse a sample of trending crypto pools across supported chains, apply your rules, and save candidates to a watchlist. Independent from the Fomo app.</p>
+<h1>Coin Scout <span style="color:var(--mint)">V2 ↗</span></h1>
+<p class="subtitle">Research trending crypto pools with FOMO activity ranking, risk flags, and paper trading. Independent from the Fomo app.</p>
 <section class="panel" aria-labelledby="filters-title">
 <h2 id="filters-title">Scanner filters</h2>
 <div class="cols">
@@ -27,12 +27,12 @@
 <div class="actions"><button id="scan" class="btn">Scan trending pools</button><button id="reset" class="ghost">Reset</button></div>
 <div class="mode" style="margin-top:13px"><input id="buys" type="checkbox" checked><label for="buys">Require more buys than sells (last hour)</label></div>
 <div id="status" role="status" aria-live="polite">Tap Scan to fetch live public market data.</div>
-<div class="notice">A match is <strong>not a buy recommendation</strong>. Trending rankings can be manipulated; these filters do not detect scams, honeypots, or rug pulls. Never connect your wallet or enter a seed phrase here.</div>
+<div class="notice">A match or high activity score is <strong>not a buy recommendation, profit prediction, or token safety check</strong>. Volume and rankings can be manipulated, and this scanner cannot detect every scam or rug pull. Never enter a seed phrase.</div>
 </section>
 <div class="bar"><h2>Scan results</h2><span id="count" class="count">0 matches</span></div>
 <div class="tabs"><button id="showResults" class="tab active">Matches</button><button id="showSaved" class="tab">Saved watchlist (<span id="savedCount">0</span>)</button></div>
 <div id="results" class="empty">No scan yet. Your matching pools will appear here.</div>
-<footer>Market data: GeckoTerminal public API. Displays a subset of its trending pools, not a market-wide search. Quotes may lag or differ from execution prices. No brokerage connection, no trading, no background notifications. Watchlist uses this browser's local storage; clearing Safari website data can erase it.</footer>
+<footer>Market data: GeckoTerminal public API. Scores are experimental activity heuristics, not predictive signals. Displays one page of trending pools, not a market-wide search. Quotes may lag or differ from execution prices. No brokerage connection, no trading, no background notifications. Watchlist uses this browser's local storage; clearing Safari website data can erase it.</footer>
 </main>
 <script>
 'use strict';
@@ -55,7 +55,7 @@ function parsePools(payload,network){const included=new Map((payload.included||[
  const buys=Number(a.transactions?.h1?.buys);const sells=Number(a.transactions?.h1?.sells);
  return {key:network+':'+(tokenAddress||a.address),network,address:tokenAddress,poolAddress:a.address,
  symbol:base.symbol||String(a.name||'Unknown').split(' / ')[0],name:base.name||a.name||'Unknown token',
- liquidity:Number(a.reserve_in_usd),volume:Number(a.volume_usd?.h24),price:Number.isFinite(price)?price:NaN,
+ liquidity:Number(a.reserve_in_usd),volume:Number(a.volume_usd?.h24),volumeH1:Number(a.volume_usd?.h1),price:Number.isFinite(price)?price:NaN,
  ageH:Number.isFinite(createDate)?Math.max(0,(Date.now()-createDate)/36e5):NaN,
  change:Number.isFinite(h1Change)?h1Change:NaN,buys:Number.isFinite(buys)?buys:NaN,sells:Number.isFinite(sells)?sells:NaN,
  score:Number(a.volume_usd?.h24)/(Number(a.reserve_in_usd)||1),createdAt:a.pool_created_at};
@@ -72,7 +72,7 @@ function renderCard(x){const card=node('article','coin');const headline=node('di
 }
 function render(){const saved=readSaved();$('savedCount').textContent=Object.keys(saved).length;$('showResults').classList.toggle('active',mode==='results');$('showSaved').classList.toggle('active',mode==='saved');
  const rules=currentRules();let shown=mode==='results'?scanned.filter(x=>meets(x,rules)):Object.values(saved);
- if(mode==='results')shown=shown.sort((a,b)=>(b.volume||0)-(a.volume||0));
+ if(mode==='results')shown=shown.sort((a,b)=>fomoScore(b)-fomoScore(a)||(b.volume||0)-(a.volume||0));
  $('count').textContent=(mode==='results'?shown.length+' matches out of '+scanned.length:shown.length+' saved tokens');const results=$('results');results.replaceChildren();results.className='';if(shown.length===0){results.className='empty';results.textContent=mode==='saved'?'No saved tokens yet. Tap ☆ Save on a coin.':scanned.length?'No matches. Relax some filters or switch network.':'No scan yet. Tap Scan to fetch live data.';return;}const frag=document.createDocumentFragment();shown.forEach(x=>frag.append(renderCard(x)));results.append(frag);
 }
 async function scan(){const btn=$('scan');btn.disabled=true;btn.textContent='Scanning…';$('status').textContent='Fetching trending pools…';
@@ -82,4 +82,5 @@ async function scan(){const btn=$('scan');btn.disabled=true;btn.textContent='Sca
  }catch(err){$('status').textContent='Could not retrieve live data: '+err.message+'. Check your connection, retry later, or use DEX Screener directly. On iPhone, this works best when hosted as an HTTPS web page.';}finally{btn.disabled=false;btn.textContent='Scan trending pools';}}
 $('scan').onclick=scan;$('reset').onclick=()=>{$('network').value='solana';$('duration').value='1h';$('liquidity').value='50000';$('volume').value='100000';$('minage').value='24';$('change').value='0';$('buys').checked=true;render()};$('showResults').onclick=()=>{mode='results';render()};$('showSaved').onclick=()=>{mode='saved';render()};keys.forEach(k=>$(k).addEventListener('change',render));render();
 </script>
+<script src="v2.js"></script>
 </body></html>
